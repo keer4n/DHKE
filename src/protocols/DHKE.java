@@ -29,8 +29,10 @@ public class DHKE {
 			if (id == 1) {
 				p = BigInteger.probablePrime(SIZE+1, rnd);
 				g = new BigInteger(SIZE,rnd);
+				
 				out.writeObject(p);
 				out.flush();
+				
 				out.writeObject(g);
 				out.flush();
 				
@@ -52,6 +54,7 @@ public class DHKE {
 			} else if(id == 2) {
 				p = (BigInteger) in.readObject();
 				g = (BigInteger) in.readObject();
+				
 				BigInteger X = (BigInteger) in.readObject();
 				
 				BigInteger y = new BigInteger(SIZE,rnd);
