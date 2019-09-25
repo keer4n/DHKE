@@ -2,6 +2,7 @@ package main;
 
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.math.BigInteger;
 import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -15,7 +16,7 @@ public class Experiment {
 	
 	public static void main(String[] args) {
 		
-		final String ADDRESS = "127.0.0.2";
+		final String ADDRESS = "127.0.0.1";
 		final int PORT = 8000;
 		
 		int id = 1;
@@ -49,6 +50,11 @@ public class Experiment {
 		DHKE test = new DHKE(id);
 		test.calculateAgreement(in, out);
 		System.out.println("Shared Secret for P"+ id + ": " + test.getSharedSecret());
+		//BigInteger xy = test.getSharedSecret();
 		
-	}
+		
+		
+		
+	
+}
 }
